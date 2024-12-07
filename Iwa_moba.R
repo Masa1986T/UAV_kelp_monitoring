@@ -1,5 +1,3 @@
-setwd("C:/Users/00007795.MS/OneDrive - 国立研究開発法人 水産研究・教育機構/藻場回復/R/Manazuru_moba")
-
 ######################data###############################
 rm(list=ls())
 
@@ -11,7 +9,7 @@ Iwa_moba$Species
 
 
 library(ggplot2)
-### seaweed cover
+### Figure for seaweed cover
 plot_seaweed<-ggplot(data=Iwa_moba, aes(x=Transect, y=Cover,fill=Species))+
   xlab("Transect")+ 
   ylab(expression(atop("Cover (%)")))+ 
@@ -22,8 +20,11 @@ plot_seaweed<-ggplot(data=Iwa_moba, aes(x=Transect, y=Cover,fill=Species))+
   theme(axis.text = element_text(color="black",size=22))+
   theme(strip.text = element_text(size = 22))+
   theme(legend.text =  element_text(size = 20))
-
 plot_seaweed
+
+ggsave("Figure3_Iwa_algalcommunity1.pdf", width = 12, height = 4)
+
+
 
 ###PERMANOVA ####
 library(vegan)
