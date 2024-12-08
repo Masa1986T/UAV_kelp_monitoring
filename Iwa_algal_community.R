@@ -1,7 +1,7 @@
 ######################data###############################
 rm(list=ls())
 
-Iwa_moba<-read.csv("Iwa_moba_2019-2020.csv")
+Iwa_moba<-read.csv("Iwa_algae_data_2019-2020.csv")
 Iwa_moba$Species <- factor(Iwa_moba$Species, 
                            levels = c("Ecklonia", "Sargassum","Small algae",
                                       "Geniculate CA","Nongeniculate CA") )
@@ -28,8 +28,8 @@ ggsave("Figure3_Iwa_algalcommunity1.pdf", width = 12, height = 4)
 
 ###PERMANOVA ####
 library(vegan)
-Iwa_moba_com<-read.csv("Iwa_moba_community.csv",header=T,row.names=1)
-envi_moba<-read.csv("envi_iwa_moba.csv")
+Iwa_moba_com<-read.csv("Iwa_algal_community_multivariate.csv",header=T,row.names=1)
+envi_moba<-read.csv("envi_iwa_site_multivariate.csv")
 
 adonis2(Iwa_moba_com~Year+Line, data=envi_moba, method="bray", permutation = 9999)
 
