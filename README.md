@@ -9,7 +9,7 @@ The raw data described below are housed in the folder /data.
 - Make figure 4 for large typhoon tracks 2019: typhoon_table2019.csv
 - Make figure 5 for cover of algal species: Iwa_algae_data_2019-2020.csv
 - Perform multivariate analysis with figure 5: Iwa_algal_community_multivariate.csv
-- Sea-truth data in Iwa and Manazuru for mapping of kelp forests using UAV photos: Data_sea-truth.xlsx
+- Sea-truth data in Iwa and Manazuru for mapping kelp forests using UAV photos: Data_sea-truth.xlsx
 
 
 To make figures or run the analyses, use the scripts below. 
