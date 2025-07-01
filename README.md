@@ -1,5 +1,5 @@
 # UAV_kelp_monitoring
-This repository provides datasets and R code for the analysis in "Rapid decline of temperate kelp forests revealed by unoccupied aerial vehicle (UAV) photography and underwater observations” by Masaaki Sato, Junji Kinoshita, Kyoji Ishita, Shiori Arima, Masayuki Fudo, Hisami Kuwahara to examine temporal changes in kelp forests at Manazuru in pacific coasts of Central Japan.  
+This repository provides datasets and R code for the analysis in "Rapid loss of temperate kelp forests revealed by unmanned aerial vehicle (UAV) photography and underwater observations” by Masaaki Sato, Junji Kinoshita, Kyoji Ishita, Shiori Arima, Masayuki Fudo, Hisami Kuwahara to examine temporal changes in kelp forests at Manazuru in pacific coasts of Central Japan.  
 
 The raw data described below are housed in the folder /data.
 
@@ -20,3 +20,5 @@ To make figures or run the analyses, use the scripts below.
 - Make figure 4 for large typhoon tracks 2019: typhoon_track2019.R
 - Make figure 5 for cover of algal species, and perform multivariate analysis: Iwa_algal_community.R
 
+# Citation
+Sato M, Kinoshita J, Ishita K, Arima S, Fudo M, Kuwahara H (2025) Rapid loss of temperate kelp forests revealed by unmanned aerial vehicle (UAV) photography and underwater observations. Aquatic Botany 200:103900  https://authors.elsevier.com/a/1l1dm_6wxKSVx3
