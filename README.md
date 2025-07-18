@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # UAV_kelp_monitoring
 This repository provides datasets and R code for the analysis in Sato et al. (2025).
 
@@ -27,5 +26,3 @@ To make figures or run the analyses, use the scripts below.
 
 ## Citation
 Sato M, Kinoshita J, Ishita K, Arima S, Fudo M, Kuwahara H (2025) Rapid loss of temperate kelp forests revealed by unmanned aerial vehicle (UAV) photography and underwater observations. Aquatic Botany 200:103900
-=======
-
