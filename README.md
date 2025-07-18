@@ -20,3 +20,6 @@ To make figures or run the analyses, use the scripts below.
 - Make figure 4 for large typhoon tracks 2019: typhoon_track2019.R
 - Make figure 5 for cover of algal species, and perform multivariate analysis: Iwa_algal_community.R
 
+# Citation
+Sato M, Kinoshita J, Ishita K, Arima S, Fudo M, Kuwahara H (2025) Rapid loss of temperate kelp forests revealed by unmanned aerial vehicle (UAV) photography and underwater observations. Aquatic Botany 200:103900
+https://www.sciencedirect.com/science/article/pii/S030437702500035X?casa_token=ULtbcDPG48gAAAAA:X6XcqKycLt49dQ3i-6yCnYkO0BgcVDDxrAJWaA06V0KCv_tBWQnKGhiOvIwmPf30sf-JvYw6
