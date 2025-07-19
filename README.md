@@ -1,8 +1,8 @@
 # UAV_kelp_monitoring
-This repository provides datasets and R code for the analysis in Sato et al. (2025).
+This repository provides datasets and R codes for the analysis in Sato et al. (2025).
 
 ## Data
-The raw data described below are housed in the folder /data.
+The folder "data" includes the raw data described below.
 
 - Make figure 2 for water temperature at Enoura: Enoura_wtemp5m_2008-2020.csv, Enoura_maxTemp_hist.csv, and Enoura_16cTemp_hist.csv
 - Make figure 3 for catch of herbivore fish: Herbivore_setnet.csv
