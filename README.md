@@ -4,7 +4,7 @@ This repository provides datasets and R codes for the analysis in Sato et al. (2
 ## Data
 The folder "data" includes the raw data described below.
 
-- Make figure 2 for water temperature at Enoura: Enoura_wtemp5m_2008-2020.csv, Enoura_maxTemp_hist.csv, and Enoura_16cTemp_hist.csv
+- Make figure 2 for water temperature at Enoura: Enoura_wtemp_mean.csv, Enoura_maxTemp_hist.csv, and Enoura_16cTemp_hist.csv
 - Make figure 3 for catch of herbivore fish: Herbivore_setnet.csv
 - Make figure 4 for Significant wave height at Shimoda: Shimoda_wave_2008-2020.csv
 - Make figure 4 for large typhoon tracks 2019: typhoon_table2019.csv
@@ -18,7 +18,7 @@ The folder "res" includes results of figures obtained by running codes below.
 ## Codes
 To make figures or run the analyses, use the scripts below. 
 
-- Make figure 2 for water temperature at Enoura: Enoura_physical_variable.R
+- Make figure 2 for water temperature at Enoura near study site: Enoura_physical_variable.R
 - Make figure 3 for catch of herbivore fish: Herbivore_catch_seisho.R
 - Make figure 4 for Significant wave height at Shimoda: Wave_current_velocity.R
 - Make figure 4 for large typhoon tracks 2019: typhoon_track2019.R
