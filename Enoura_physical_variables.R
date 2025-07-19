@@ -4,39 +4,7 @@ library(lubridate) # for working with dates
 library(ggplot2)  # for creating graphs
 library(scales)   # to access breaks/formatting functions
 library(gridExtra) # for arranging plots
-library(dplyr)
 library(ggpubr)
-
-
-# Enoura water temperature data by 10 minutes interval
-Enoura_wtemp <- read.csv("Enoura_wtemp5m_2008-2020.csv")
-Enoura_wtemp$Date <- as.Date(Enoura_wtemp$DateTime)
-
-
-
-# plot Air Temperature Data across 2009-2011 using daily data
-ggplot(Enoura_wtemp, aes(Date, WaterTemp)) +xlab("Year") + ylab("Water Temperature (C)")+
-  geom_point(na.rm=TRUE)
-
-ggplot(Enoura_wtemp, aes(DateTime, WaterTemp)) +xlab("Year") + ylab("Water Temperature (C)")+
-  geom_point(na.rm=TRUE)
-
-# Summarizing data by daily temperature using dplyr 
-Enoura_wtemp_mean <-
-  Enoura_wtemp %>%
-  group_by(Date) %>%
-  summarize(mean_wtemp = mean(WaterTemp, na.rm = TRUE))
-names(Enoura_wtemp_mean)
-modt<-glm(mean_wtemp~Date,data=Enoura_wtemp_mean)
-summary(modt)
-write.csv(Enoura_wtemp_mean,"Enoura_wtemp_mean.csv")
-
-#Model
-dummy_tempday<- expand.grid(Date=seq(as.Date("2008-01-01"),
-                                     as.Date("2020-12-31"),length=4668))
-pred_tempday<- predict(modt,newdata=dummy_tempday,se.fit=T)
-dummy_tempday$wtemp<-pred_tempday$fit
-
 
 #Model
 Enoura_wtemp <- read.csv("Enoura_wtemp_mean.csv")
@@ -47,7 +15,6 @@ dummy_tempday<- expand.grid(ElapsedDay=seq(min(Enoura_wtemp$ElapsedDay),
                                              max(Enoura_wtemp$ElapsedDay),length=10000))
 pred_tempday<- predict(modt1,newdata=dummy_tempday,se.fit=T)
 dummy_tempday$wtemp<-pred_tempday$fit
-
 
 
 
@@ -74,8 +41,7 @@ plot_timeseries
 
 
 
-
-# Lethal high temperature for Ecklonia cava 
+# Lethal high temperature for Ecklonia cava (28C)
 Enoura_wtemp_28c <- read.csv("Enoura_kelp_28cTemp_hist.csv")#This was used for the final paper
 
 
@@ -97,7 +63,7 @@ t.test(Enoura_wtemp_28c_ex2019$Day,mu=4.6736111)#2019
 Enoura_wtemp_28c_ex2020<-Enoura_wtemp_28c[-12,] #excluding 2020 data                       
 t.test(Enoura_wtemp_28c_ex2020$Day,mu=9.1388889)#2020
 
-# 16 C water temperature
+# 16 C water temperature for herbivores actively eating seaweeds 
 Enoura_wtemp_16C_01<-subset(Enoura_wtemp_16C,Temp=="T>=16C")
 
 plot_16c01_day<- ggplot(data=Enoura_wtemp_16C_01, aes(x=factor(Year), y=Day, fill=Temp)) +
