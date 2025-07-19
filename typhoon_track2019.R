@@ -2,6 +2,7 @@ library(oce)
 library(ocedata)
 
 rm(list=ls())
+#On Oct 18, csv file includes data until typhoon 13
 #10月18日現在、csvに含まれているのは2019年台風第13号までのデータです。
 d2019<-read.csv("typhoon_table2019.csv",h=T,fileEncoding ='cp932',stringsAsFactors=F)
 d2017<-read.csv("typhoon_table2017.csv",h=T,fileEncoding ='cp932',stringsAsFactors=F)
@@ -29,7 +30,7 @@ data(coastlineWorldFine, package="ocedata")
 mapPlot(coastlineWorldFine,
            longitudelim=c(138,141), latitudelim=c(34.7, 35.8),
            projection="+proj=lcc +lat_0=2 +lat_1=65 +lon_0=140", col="lightgray")
-# 台風FAXAI in 2019
+# Typhoon FAXAI in 2019
 {
   lon=d2019[d2019$台風名== "FAXAI" ,]$経度
   lat=d2019[d2019$台風名== "FAXAI"  ,]$緯度  
@@ -40,7 +41,7 @@ mapPlot(coastlineWorldFine,
   mapText(lon, lat, d2019[d2019$台風名== "FAXAI" ,]$Time, col = "orange", pos = 4, offset = 1)
   mapText(lon, lat, d2019[d2019$台風名== "FAXAI" ,]$pressure, col = "orange", pos = 3, offset = 1)}
 
-# 台風HAGIBIS in 2019
+# Typhoon HAGIBIS in 2019
 {
   lon=d2019[d2019$台風名== "HAGIBIS" ,]$経度
   lat=d2019[d2019$台風名== "HAGIBIS"  ,]$緯度  
@@ -56,13 +57,13 @@ mapPlot(coastlineWorldFine,
   mapText(lon, lat, d2019[d2019$台風名== "HAGIBIS" ,]$Time, col = "red", pos = 2, offset = 1)
   mapText(lon, lat, d2019[d2019$台風名== "HAGIBIS" ,]$pressure, col = "red", pos = 3, offset = 1)}
 
-#650*500で保存
+#Saved as 650*500
 
 png(file="typhoon_tracks2019_0408.png",width=600, height=400, res=300)
 svg(file="typhoon_tracks2019_0408.svg",
     width=6, height=4)
 
-# 台風 LAN  in 2017
+# Typhoon LAN  in 2017 not used for Sato et al. (2025)
 {lon=d2017[d2017$台風名== "LAN" ,]$経度
   lat=d2017[d2017$台風名== "LAN"  ,]$緯度  
   rank=(d2017[d2017$台風名== "LAN"  ,]$階級%%7)%%6

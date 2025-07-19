@@ -9,7 +9,7 @@ Iwa_moba$Species
 
 
 library(ggplot2)
-### Figure for seaweed cover
+### Figure for changes in seaweed cover between 2019 and 2020 
 plot_seaweed<-ggplot(data=Iwa_moba, aes(x=Transect, y=Cover,fill=Species))+
   xlab("Transect")+ 
   ylab(expression(atop("Cover (%)")))+ 

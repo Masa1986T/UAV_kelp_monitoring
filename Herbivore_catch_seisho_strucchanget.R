@@ -1,21 +1,16 @@
 library(strucchange)
+rm(list=ls())
 
 herbivore<-read.csv("Herbivore_setnet1.csv")
-
 
 herbivore$Species <- factor(herbivore$Species, 
                             levels = c("Calotomus japonicus", "Siganus fuscescens",
                                        "Prionurus scalprum", "Girella punctata") )
 herbivore_2sp<-subset(herbivore,Species=="Calotomus japonicus" | Species=="Siganus fuscescens")
-herbivore_aigo<-subset(herbivore, Species=="Siganus fuscescens")
 
-rm(list=ls())
 
-ts_data <- ts(Nile)
-plot(Nile)
-write.csv(Nile, file = "Nile.csv")
 
-#Aigo change #
+#Siganus change points #
 herbivore_aigo<-subset(herbivore, Species=="Siganus fuscescens")
 plot(Catch~Year,data=herbivore_aigo)
 
@@ -32,7 +27,7 @@ lines(aigo_ts)
 lines(aigoci_ts) 
 lines(ts(fitted(aigofm), start = 2000), col = 4) #Describing correlated lines (blue)
 
-#Budai change #
+#Calotomus change points #
 herbivore_budai<-subset(herbivore, Species=="Calotomus japonicus")
 plot(Catch~Year,data=herbivore_budai)
 
@@ -52,7 +47,9 @@ lines(ts(fitted(budaifm), start = 2000), col = 4) #Describing correlated lines (
 
 
 
-###Test using data "Nile"
+### Test using data "Nile" #####
+### Not related to Sato et al. (2025)###
+
 data("Nile") 
 plot(Nile)
 ## F statistics indicate one breakpoint 
